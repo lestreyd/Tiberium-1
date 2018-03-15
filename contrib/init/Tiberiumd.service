@@ -1,0 +1,26 @@
+[Unit]
+Description=Tiberium's distributed currency daemon
+After=network.target
+
+[Service]
+User=Tiberium
+Group=Tiberium
+
+Type=forking
+PIDFile=/var/lib/tiberiumd/tiberiumd.pid
+
+ExecStart=/usr/bin/tiberiumd -daemon -pid=/var/lib/tiberiumd/tiberiumd.pid \
+          -conf=/etc/Tiberium/Tiberium.conf -datadir=/var/lib/tiberiumd
+
+ExecStop=-/usr/bin/Tiberium-cli -conf=/etc/Tiberium/Tiberium.conf \
+         -datadir=/var/lib/tiberiumd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Tiberium
+Comment=Tiberium P2P Cryptocurrency
+Comment[fr]=Tiberium, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Tiberium, eşten eşe kriptografik sanal para birimi
+Exec=Tiberium-qt %u
+Terminal=false
+Type=Application
+Icon=tiberium128
+MimeType=x-scheme-handler/Tiberium;
+Categories=Office;Finance;
